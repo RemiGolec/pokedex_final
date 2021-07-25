@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace, Courier, Helvetica, sans-serif;
+    line-height: 120%;
+    font-size: 100%;
+}
+
+:root {
+    --main-bg-color:black;
+    --secondary-bg-color:gray;
+}
+
+
+.modal-custom-styling {
+    background-color: #001213eb;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 1px 2px 18px #00E0FF;
+}
+
+
+/* -------------  POKEMON IMAGES VISIBILITY CLASS ---------- */ 
+.invisible {
+    display: none;
+}
+
+
+/* --------------  POKEMON DETAILS -------------------------- */
+.pokemon-name {
+    color: gold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px #ff009e;
+    margin-bottom: 1rem;
+}
+
+.pokemon-height {
+    color: #ff009e;
+}
+
+.pokemon-types {
+    color: #00E0FF;
+    margin-top: 0px;
+} 
+
+
+
+/* ----------------  MODAL END  --------------------------------- */
+
+.header{ 
+    background-color: #001213;
+    color: #00E0FF;
+    padding: 1px;    
+    text-align: center; 
+    font-size: 700%;
+    margin: 0.5em 0 0 0;
+    animation: fade-in-zoom 2s 1;
+}
+
+.gradient-text {
+    /* Fallback: Set a background color. */
+    background-color: red;
+    background-image: linear-gradient(0deg,#001213 7%, #f3ec78, #ff009e 65%);
+    background-size: 100%;
+    background-repeat: repeat;
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+    
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.pokemon-icon {
+    opacity: 0.2;
+    width: 390px;
+    position: fixed;
+    top: 282px;
+    left: 50%;
+    margin-left: -195px;
+    margin-top: 0;
+    animation: fade-in-out 5s 1;
+}
+
+
+.button_one {
+    background-color: #00E0FF;
+    text-transform: capitalize;
+    border: none;
+    color: #222831;
+    font-size: 120%;
+    border-radius: 9px;
+    padding: 10px;
+    margin-bottom: 7px;
+    width: 150px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.button_one:hover {
+    color: #ff009e; /*#0dff00*/
+    background-color: transparent;
+    /* text-transform: uppercase; */
+}
+
+.flex-container {
+    background-color: #001213 /*#B21F66*/;
+    display: flex;
+    flex-direction: column; 
+}
+
+/*  ------  my previous styling for POKEMON LIST --- */
+
+.pokemon-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 750px;
+    padding-top: 0;
+    padding-right: 5%;
+    padding-left: 5%;
+    position: relative;
+    animation: slide-down 5s;
+    margin: auto;
+}
+
+.pokemon-list > li {
+    padding: 10px;
+}
+
+.list-group {
+    flex-direction: inherit;
+}
+
+/* ----------- ANIMATIONS ------------- */
+
+@keyframes fade-in-zoom {
+    0%   {opacity: 0.0; font-size: 0%;}
+    100% {opacity: 1; font-size: 700%;}
+}
+
+@keyframes slide-down {
+    0% {top: -4500px; opacity: 0}
+    100% {top: 0px; opacity: 1}
+}
+
+@keyframes fade-in-out {
+    0% {opacity: 0; top: 800px}
+    30%{opacity: 0}
+    75% {opacity: 0.8}
+    100% {opacity: 0.2}
+}
+
+/* -------------- @MEDIA -------------- */
+
+@media only screen and (min-width: 1001px) {
+    .pokemon-name {
+        font-size: 200%;
+    }
+    .pokemon-height {
+        font-size: 150%;
+    }
+    .pokemon-types {
+        font-size: 150%;
+    }
+} 
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+    .header {
+        font-size: 500%;
+    }
+    @keyframes fade-in-zoom {
+        0%   {opacity:0.0; font-size: 0%;}
+        100% {opacity:1; font-size: 500%}
+    }
+    .pokemon-icon {
+        top: 193px;
+    }
+    .pokemon-name {
+        font-size: 150%;
+    }
+    .pokemon-height {
+        font-size: 120%;
+    }
+    .pokemon-types {
+        font-size: 120%;
+    }
+}
+
+@media only screen and (min-width: 431px) and (max-width: 600px) {
+    .header {
+        font-size: 300%;
+    }
+
+    @keyframes fade-in-zoom {
+        0%   {opacity:0.0; font-size: 0%;}
+        100% {opacity:1; font-size: 300%}
+    }
+    .pokemon-name {
+        font-size: 120%;
+    }
+
+}
+
+@media only screen and (max-width: 430px) {
+    .pokemon-icon {
+        width: 280px;
+        margin-left: -140px;
+    }
+    .pokemon-name {
+        font-size: 100%;
+    }
+
+
+}
+
+
+
